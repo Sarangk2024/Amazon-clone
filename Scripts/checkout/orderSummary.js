@@ -3,13 +3,14 @@ import {products,getProduct} from '../../data/products.js'
 import {formatCurrency} from '../money.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
 import { deliveryOptions,getDeliveryOption } from '../../data/deliveryOption.js'
+import { renderPaymentSummary } from './paymentSummary.js'
 
 
 const today= dayjs();
 const devilveryDate=today.add(7,'days');
 devilveryDate.format('dddd, MMMM D');
 
-export function renderOrerSummary(){
+export function renderOrderSummary(){
 	let cartSummaryHtml='';
 
 	cart.forEach((cartItem) =>{
@@ -110,6 +111,8 @@ export function renderOrerSummary(){
 
 			const conatiner =document.querySelector(`.js-cart-item-container-${productId}`);
 			conatiner.remove();
+
+			renderPaymentSummary();
 		});
 	})
 
@@ -119,7 +122,10 @@ export function renderOrerSummary(){
 		element.addEventListener("click" ,()=>{
 			const {productId,deliveryOptionId}=element.dataset
 			updateDeliveryOption(productId,deliveryOptionId)
-			renderOrerSummary()
+
+			
+			renderOrderSummary()
+			renderPaymentSummary()
 		})
 	})
 

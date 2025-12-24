@@ -6,9 +6,6 @@ import { deliveryOptions,getDeliveryOption } from '../../data/deliveryOption.js'
 import { renderPaymentSummary } from './paymentSummary.js'
 
 
-const today= dayjs();
-const devilveryDate=today.add(7,'days');
-devilveryDate.format('dddd, MMMM D');
 
 export function renderOrderSummary(){
 	let cartSummaryHtml='';

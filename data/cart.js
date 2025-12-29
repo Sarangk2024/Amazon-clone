@@ -1,7 +1,7 @@
 export let cart;
-loadFomStorage()
+loadFromStorage()
 
-export function loadFomStorage(){
+export function loadFromStorage(){
 	cart=JSON.parse(localStorage.getItem('cart'))
 
 
@@ -24,7 +24,7 @@ export function loadFomStorage(){
 
 
 
-function saveToStrorage(){
+function saveToStorage(){
   localStorage.setItem('cart',JSON.stringify(cart))
 }
 
@@ -47,7 +47,7 @@ export function addToCart(productId){
 	});
 }
 
-  saveToStrorage();
+  saveToStorage();
 }
 
 export function removeFromCart(productId){
@@ -60,7 +60,7 @@ export function removeFromCart(productId){
 
 	cart=newCart;
 
-	saveToStrorage();
+	saveToStorage();
 }
 
 
@@ -74,5 +74,5 @@ export function updateDeliveryOption(productId,deliveryOptionId){
 
 	matchingItem.deliveryOptionId=deliveryOptionId
 
-	saveToStrorage()
+	saveToStorage()
 }

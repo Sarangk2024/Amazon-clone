@@ -109,13 +109,13 @@ updateCartQuantity();
 
 
 function updateCartQuantity(){
-  let cartQuanity=0;
+  let cartQuantity=0;
 
   cart.forEach((cartItem) =>{
-    cartQuanity+=cartItem.quantity;
+    cartQuantity+=cartItem.quantity;
   });
 
-  document.querySelector(".js-cart-quantity").innerHTML=cartQuanity;
+  document.querySelector(".js-cart-quantity").innerHTML=cartQuantity;
 }
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {

@@ -74,4 +74,12 @@ export function renderPaymentSummary(){
 	`;
 
 	document.querySelector(".js-payment-summary").innerHTML=paymentSummaryHTML
+
+	const checkoutItemsLink = document.querySelector('.js-checkout-items');
+
+	if (checkoutItemsLink)
+		checkoutItemsLink.innerText = `${totalItems} items`;
+	
+
+
 }

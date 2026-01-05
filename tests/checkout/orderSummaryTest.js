@@ -1,5 +1,5 @@
 import {renderOrderSummary} from '../../Scripts/checkout/orderSummary.js'
-import {loadFomStorage ,cart} from "../../data/cart.js";
+import {loadFromStorage ,cart} from "../../data/cart.js";
 
 describe('test suite:renderOrderSummary',()=>{
   const productId1="e43638ce-6aa0-4b85-b27f-e1d07eb678c6"
@@ -28,7 +28,7 @@ describe('test suite:renderOrderSummary',()=>{
       ]);
     });
 
-    loadFomStorage();
+    loadFromStorage();
     renderOrderSummary();
 
   })
